@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Beli Pulsa</title>
+  <script>
+    function kirimWA() {
+      const noTujuan = document.getElementById("noTujuan").value;
+      const nominal = document.getElementById("nominal").value;
+      const adminWA = "6285656709799"; // GANTI DENGAN NOMOR WA KAMU
+      const pesan = `Halo! Saya ingin isi pulsa.\nNomor: ${noTujuan}\nNominal: ${nominal}`;
+      const linkWA = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(linkWA, "_blank");
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded-xl shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Jualan Pulsa</h1>
+    <label class="block mb-2 font-semibold">Nomor Tujuan</label>
+    <input type="text" id="noTujuan" placeholder="08xxxxxxxxxx" class="w-full p-2 mb-4 border rounded-md">
+
+    <label class="block mb-2 font-semibold">Nominal Pulsa</label>
+    <select id="nominal" class="w-full p-2 mb-4 border rounded-md">
+      <option value="5000">Rp5.000</option>
+      <option value="10000">Rp10.000</option>
+      <option value="20000">Rp20.000</option>
+      <option value="50000">Rp50.000</option>
+      <option value="50000">Rp100.000</option>
+    </select>
+
+    <button onclick="kirimWA()" class="bg-green-500 text-white w-full p-2 rounded-md hover:bg-green-600">
+      Pesan via WhatsApp
+    </button>
+  </div>
+</body>
+</html>
